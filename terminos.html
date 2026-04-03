@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Términos y Condiciones | Mentes Abundantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crema:       #F7F4EE;
+  --crema-d:     #E8E2D6;
+  --sage:        #6B8F5E;
+  --sage-l:      #A8C594;
+  --sage-ll:     #D4E8CB;
+  --sage-d:      #4A6840;
+  --dorado:      #C49A3C;
+  --dorado-ll:   #F5E8C0;
+  --bosque:      #2E3D2F;
+  --texto:       #2E3D2F;
+  --texto-s:     #6B7C6C;
+  --border:      rgba(46,61,47,.10);
+  --border-m:    rgba(46,61,47,.18);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--crema);
+  color:var(--texto);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav {
+  position:fixed; top:0; width:100%;
+  padding:1.1rem 3rem;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(247,244,238,.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  z-index:999;
+}
+.nav-brand {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.2rem;
+  text-transform:uppercase; letter-spacing:.07em; color:var(--bosque);
+  text-decoration:none;
+}
+.nav-brand em { font-style:normal; color:var(--sage); }
+.nav-back {
+  font-size:.85rem; font-weight:400; color:var(--texto-s);
+  text-decoration:none;
+  display:flex; align-items:center; gap:.4rem;
+  transition:color .2s;
+}
+.nav-back:hover { color:var(--sage); }
+
+/* HERO STRIP */
+.hero-strip {
+  background:var(--bosque);
+  padding:7rem 2rem 3.5rem;
+  text-align:center;
+}
+.hero-strip .tag {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--sage-l); display:block; margin-bottom:1rem;
+}
+.hero-strip h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:clamp(2.5rem,6vw,4rem);
+  text-transform:uppercase; line-height:.95;
+  color:#fff;
+}
+.hero-strip h1 em { font-style:normal; color:var(--sage-l); }
+.hero-strip p {
+  margin-top:1rem; font-size:.9rem; font-weight:300;
+  color:rgba(255,255,255,.5); letter-spacing:.05em;
+}
+
+/* CONTENT */
+.contenido {
+  max-width:780px;
+  margin:0 auto;
+  padding:4rem 2rem 6rem;
+}
+
+/* INTRO BOX */
+.intro-box {
+  background:#fff;
+  border:1px solid var(--border-m);
+  border-left:4px solid var(--sage);
+  border-radius:0 10px 10px 0;
+  padding:1.5rem 1.8rem;
+  margin-bottom:3rem;
+}
+.intro-box p {
+  font-size:.95rem; line-height:1.8;
+  font-weight:300; color:var(--texto-s);
+}
+.intro-box p strong { color:var(--bosque); font-weight:500; }
+
+/* SECCIÓN */
+.seccion {
+  margin-bottom:2.5rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.seccion-header {
+  background:var(--sage-d);
+  padding:.85rem 1.5rem;
+  display:flex; align-items:center; gap:.9rem;
+}
+.seccion-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:1.3rem;
+  color:rgba(255,255,255,.35);
+  line-height:1; flex-shrink:0;
+}
+.seccion-titulo {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:.9rem;
+  text-transform:uppercase; letter-spacing:.1em;
+  color:#fff;
+}
+.seccion-body {
+  padding:1.5rem;
+  border-left:3px solid var(--sage-ll);
+}
+.seccion-body p {
+  font-size:.9rem; line-height:1.82;
+  font-weight:300; color:var(--texto-s);
+  margin-bottom:.8rem;
+}
+.seccion-body p:last-child { margin-bottom:0; }
+.seccion-body p strong { color:var(--bosque); font-weight:500; }
+.seccion-body ul {
+  list-style:none;
+  margin:.5rem 0 .8rem;
+}
+.seccion-body ul li {
+  font-size:.9rem; line-height:1.78;
+  font-weight:300; color:var(--texto-s);
+  padding:.3rem 0 .3rem 1.4rem;
+  position:relative;
+  border-bottom:1px solid rgba(46,61,47,.05);
+}
+.seccion-body ul li:last-child { border-bottom:none; }
+.seccion-body ul li::before {
+  content:'';
+  position:absolute; left:0; top:.7rem;
+  width:6px; height:6px;
+  border-radius:50%;
+  background:var(--sage-l);
+}
+.seccion-body ul li strong { color:var(--bosque); font-weight:500; }
+
+/* HIGHLIGHT BOX */
+.highlight {
+  background:var(--dorado-ll);
+  border:1px solid rgba(196,154,60,.3);
+  border-radius:8px;
+  padding:1rem 1.3rem;
+  margin:1rem 0;
+  font-size:.88rem; line-height:1.7;
+  font-weight:300; color:#6b4e0a;
+}
+.highlight strong { font-weight:500; color:#5a3f08; }
+
+.highlight-sage {
+  background:var(--sage-ll);
+  border:1px solid rgba(107,143,94,.25);
+  border-radius:8px;
+  padding:1rem 1.3rem;
+  margin:1rem 0;
+  font-size:.88rem; line-height:1.7;
+  font-weight:300; color:var(--sage-d);
+}
+.highlight-sage strong { font-weight:500; color:var(--bosque); }
+
+/* FECHA */
+.fecha-actualizacion {
+  text-align:center;
+  margin-bottom:2.5rem;
+  font-size:.8rem;
+  color:var(--texto-s);
+  font-weight:300;
+  letter-spacing:.05em;
+}
+
+/* CTA BOTTOM */
+.cta-bottom {
+  background:var(--bosque);
+  border-radius:14px;
+  padding:2.5rem 2rem;
+  text-align:center;
+  margin-top:3rem;
+}
+.cta-bottom h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.6rem;
+  text-transform:uppercase; color:#fff;
+  margin-bottom:.6rem;
+}
+.cta-bottom p {
+  font-size:.9rem; font-weight:300;
+  color:rgba(255,255,255,.55);
+  margin-bottom:1.5rem; line-height:1.7;
+}
+.btn-sage {
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.85rem 2rem; border-radius:5px;
+  font-family:'DM Sans',sans-serif;
+  font-size:.9rem; font-weight:500;
+  text-decoration:none; cursor:pointer;
+  background:var(--sage); color:#fff;
+  border:none;
+  box-shadow:0 4px 16px rgba(107,143,94,.35);
+  transition:all .25s;
+}
+.btn-sage:hover { background:var(--sage-d); transform:translateY(-2px); }
+
+/* FOOTER */
+footer {
+  background:var(--bosque);
+  padding:2rem 3rem;
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:0;
+}
+.foot-brand {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.05rem;
+  text-transform:uppercase; letter-spacing:.07em; color:#fff;
+}
+.foot-brand em { font-style:normal; color:var(--sage-l); }
+.foot-copy { font-size:.78rem; color:rgba(255,255,255,.35); font-weight:300; }
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav { padding:1rem 1.2rem; }
+  .hero-strip { padding:6rem 1.5rem 3rem; }
+  .contenido { padding:3rem 1.2rem 5rem; }
+  footer { flex-direction:column; gap:1rem; text-align:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Mentes <em>Abundantes</em></a>
+  <a href="index.html" class="nav-back">← Volver a la página principal</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <span class="tag">Mentes Abundantes · Coaching PNL</span>
+  <h1>Términos y <em>Condiciones</em></h1>
+  <p>Última actualización: abril 2025</p>
+</div>
+
+<!-- CONTENIDO -->
+<div class="contenido">
+
+  <p class="fecha-actualizacion">Documento vigente a partir del 1 de abril de 2025</p>
+
+  <div class="intro-box">
+    <p>Bienvenida. Al agendar o adquirir cualquier servicio de coaching PNL con <strong>Krystina Zambrano Bottini / Mentes Abundantes</strong>, confirmas que has leído, comprendido y aceptado los presentes Términos y Condiciones. Te pedimos que los leas con atención antes de realizar cualquier pago o reserva.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">01</span>
+      <span class="seccion-titulo">Información General del Servicio</span>
+    </div>
+    <div class="seccion-body">
+      <p>Mentes Abundantes, operado por <strong>Krystina Zambrano Bottini / Mercadeo MRR LLC</strong>, ofrece servicios de coaching personal en Programación Neurolingüística (PNL) bajo la metodología <strong>"7 Pasos para la Autoliberación"</strong>.</p>
+      <p>Los servicios se prestan de forma individual (1:1) a través de videollamada por Zoom y están dirigidos a personas mayores de 18 años que deseen trabajar en su desarrollo personal, mentalidad y estrategia de vida.</p>
+      <div class="highlight">
+        <strong>Importante:</strong> El coaching PNL NO es terapia psicológica, consulta médica, asesoría legal ni consultoría financiera. Si estás atravesando una crisis de salud mental, te recomendamos consultar con un profesional de salud mental certificado.
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">02</span>
+      <span class="seccion-titulo">Servicios y Precios</span>
+    </div>
+    <div class="seccion-body">
+      <p>Los servicios disponibles y sus precios vigentes son:</p>
+      <ul>
+        <li><strong>Sesión Individual de Coaching PNL:</strong> $50 USD por sesión de 60 minutos.</li>
+        <li><strong>Paquete Transformación — 7 Pasos:</strong> $300 USD por 7 sesiones de 60 minutos. El paquete equivale a $42.85 USD por sesión y representa un ahorro de $50 USD frente al precio individual.</li>
+      </ul>
+      <p>Todos los precios están expresados en dólares estadounidenses (USD). Los precios están sujetos a cambio sin previo aviso, pero los cambios no afectarán servicios ya contratados y pagados.</p>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">03</span>
+      <span class="seccion-titulo">Pagos y Facturación</span>
+    </div>
+    <div class="seccion-body">
+      <ul>
+        <li>El pago de la <strong>Sesión Individual</strong> debe realizarse previo a cada sesión.</li>
+        <li>El pago del <strong>Paquete Transformación</strong> debe realizarse de forma completa al inicio del proceso, antes de la primera sesión.</li>
+        <li>El método de pago aceptado es el indicado en la página de pago al momento de la compra.</li>
+        <li>Al completar el pago confirmas que eres la persona autorizada para realizarlo y que aceptas estos términos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">04</span>
+      <span class="seccion-titulo">Política de Cancelación y Reembolsos</span>
+    </div>
+    <div class="seccion-body">
+      <div class="highlight">
+        <strong>Política general:</strong> Los pagos realizados no son reembolsables una vez confirmado el servicio, salvo en los casos específicos indicados a continuación.
+      </div>
+      <ul>
+        <li>Las <strong>reprogramaciones</strong> de sesiones deben solicitarse con un mínimo de <strong>24 horas de anticipación</strong> sin costo adicional.</li>
+        <li>Las cancelaciones con <strong>menos de 24 horas</strong> de aviso se contabilizarán como sesión realizada y serán descontadas del paquete o cobradas en el plan individual.</li>
+        <li>El <strong>Paquete Transformación no tiene reembolso</strong> una vez iniciado el proceso (primera sesión completada).</li>
+        <li>Las sesiones del paquete no utilizadas dentro del plazo de <strong>5 meses</strong> desde la primera sesión no son reembolsables ni transferibles.</li>
+        <li>Si Mentes Abundantes cancela una sesión por causas de fuerza mayor, la sesión será reprogramada sin cargo adicional y sin descuento del paquete.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">05</span>
+      <span class="seccion-titulo">Confidencialidad y Privacidad</span>
+    </div>
+    <div class="seccion-body">
+      <p>Mentes Abundantes se compromete a mantener <strong>absoluta confidencialidad</strong> sobre toda la información personal y el contenido compartido durante las sesiones de coaching.</p>
+      <ul>
+        <li>Las sesiones serán grabadas exclusivamente para uso personal del/la cliente. La grabación será compartida únicamente con el/la cliente al finalizar la sesión.</li>
+        <li>Ningún contenido, fragmento, información personal ni grabación será compartido con terceros sin tu autorización escrita y explícita.</li>
+        <li>Tu información personal (nombre, correo, teléfono) será utilizada únicamente para gestionar el servicio contratado y comunicaciones relacionadas con el mismo.</li>
+        <li>No compartimos tu información con terceros con fines comerciales.</li>
+      </ul>
+      <div class="highlight-sage">
+        La grabación de las sesiones es de uso personal exclusivo. No puede ser publicada, compartida en redes sociales ni distribuida en ningún medio sin autorización escrita previa.
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">06</span>
+      <span class="seccion-titulo">Responsabilidad y Resultados</span>
+    </div>
+    <div class="seccion-body">
+      <p>El coaching PNL es un proceso de desarrollo personal que requiere <strong>participación activa, compromiso y honestidad</strong> por parte del/la cliente.</p>
+      <ul>
+        <li>Los resultados del proceso dependen directamente del nivel de compromiso, participación y práctica constante de los ejercicios asignados.</li>
+        <li><strong>Mentes Abundantes no garantiza resultados específicos.</strong> La transformación personal es posible y depende del esfuerzo activo de ambas partes.</li>
+        <li>El/la cliente asume plena responsabilidad sobre las decisiones y acciones que tome a partir del proceso de coaching.</li>
+        <li>Mentes Abundantes no será responsable por decisiones tomadas por el/la cliente basadas en el contenido de las sesiones.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">07</span>
+      <span class="seccion-titulo">Propiedad Intelectual</span>
+    </div>
+    <div class="seccion-body">
+      <p>Todo el contenido de Mentes Abundantes — incluyendo metodologías, materiales, ejercicios, guías, scripts, recursos digitales y contenido de redes sociales — es <strong>propiedad intelectual de Krystina Zambrano Bottini / Mercadeo MRR LLC</strong>.</p>
+      <ul>
+        <li>Queda expresamente prohibido reproducir, copiar, enseñar, vender o distribuir cualquier material sin autorización escrita previa.</li>
+        <li>Los materiales compartidos durante las sesiones son para uso personal exclusivo del/la cliente dentro de su propio proceso.</li>
+        <li>El incumplimiento de esta cláusula puede dar lugar a acciones legales.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">08</span>
+      <span class="seccion-titulo">Conducta y Comunicación</span>
+    </div>
+    <div class="seccion-body">
+      <p>Para garantizar un espacio seguro y productivo para ambas partes, esperamos que el/la cliente:</p>
+      <ul>
+        <li>Se presente a las sesiones con puntualidad y en un espacio tranquilo y privado.</li>
+        <li>Mantenga un trato respetuoso durante toda la relación de coaching.</li>
+        <li>Comunique cualquier inconveniente o reprogramación con la anticipación indicada.</li>
+        <li>Use el soporte entre sesiones (WhatsApp) de forma responsable y dentro del alcance acordado.</li>
+      </ul>
+      <p>Mentes Abundantes se reserva el derecho de dar por terminada la relación de coaching en caso de conducta irrespetuosa, sin reembolso de sesiones restantes.</p>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">09</span>
+      <span class="seccion-titulo">Modificaciones a los Términos</span>
+    </div>
+    <div class="seccion-body">
+      <p>Mentes Abundantes se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán publicados en esta página con la fecha de actualización correspondiente.</p>
+      <p>El uso continuado de los servicios después de cualquier modificación constituye la aceptación de los nuevos términos. Te recomendamos revisar esta página periódicamente.</p>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="seccion">
+    <div class="seccion-header">
+      <span class="seccion-num">10</span>
+      <span class="seccion-titulo">Contacto</span>
+    </div>
+    <div class="seccion-body">
+      <p>Si tienes preguntas sobre estos Términos y Condiciones o sobre cualquier aspecto de los servicios, puedes contactarnos a través de:</p>
+      <ul>
+        <li><strong>Instagram:</strong> @mentesabundantesoficial</li>
+        <li><strong>Sitio web:</strong> mentes-abundantes.com</li>
+      </ul>
+      <div class="highlight-sage">
+        Al adquirir cualquier servicio de Mentes Abundantes confirmas haber leído y aceptado en su totalidad estos Términos y Condiciones.
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bottom">
+    <h3>¿Lista para comenzar?</h3>
+    <p>Tu proceso de autoliberación con PNL te está esperando.</p>
+    <a href="https://www.mentes-abundantes.com/coachingpago" class="btn-sage">Reservar mi sesión →</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">Mentes <em>Abundantes</em></div>
+  <div class="foot-copy">© 2025 Mentes Abundantes · Mercadeo MRR LLC · Todos los derechos reservados</div>
+</footer>
+
+</body>
+</html>
