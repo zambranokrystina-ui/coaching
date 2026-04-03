@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coaching PNL · 7 Pasos para la Autoliberación | Mentes Abundantes</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,600;0,700;0,800;0,900;1,300;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --crema:        #F7F4EE;
+  --crema-d:      #E8E2D6;
+  --crema-dd:     #D5CCBA;
+  --sage:         #6B8F5E;
+  --sage-l:       #A8C594;
+  --sage-ll:      #D4E8CB;
+  --sage-d:       #4A6840;
+  --dorado:       #C49A3C;
+  --dorado-l:     #E8C46A;
+  --dorado-ll:    #F5E8C0;
+  --bosque:       #2E3D2F;
+  --bosque-l:     #3d5240;
+  --texto:        #2E3D2F;
+  --texto-suave:  #6B7C6C;
+  --border:       rgba(46,61,47,0.10);
+  --border-m:     rgba(46,61,47,0.18);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'DM Sans',sans-serif;
+  background:var(--crema);
+  color:var(--texto);
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; width:100%;
+  padding:1.1rem 3rem;
+  display:flex; justify-content:space-between; align-items:center;
+  background:rgba(247,244,238,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  z-index:999;
+}
+.nav-brand {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.2rem;
+  text-transform:uppercase; letter-spacing:.07em;
+  color:var(--bosque);
+}
+.nav-brand em { font-style:normal; color:var(--sage); }
+.nav-pill {
+  background:var(--sage);
+  color:#fff;
+  text-decoration:none;
+  padding:.6rem 1.5rem;
+  border-radius:4px;
+  font-size:.88rem; font-weight:500;
+  transition:background .2s, transform .2s;
+  box-shadow:0 2px 10px rgba(107,143,94,.25);
+}
+.nav-pill:hover { background:var(--sage-d); transform:translateY(-1px); }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh;
+  display:grid; place-items:center;
+  padding:9rem 2rem 6rem;
+  position:relative; overflow:hidden;
+  text-align:center;
+}
+
+/* organic blob background */
+.hero::before {
+  content:'';
+  position:absolute;
+  width:700px; height:700px;
+  border-radius:60% 40% 55% 45% / 50% 60% 40% 50%;
+  background:radial-gradient(ellipse, rgba(168,197,148,.22) 0%, transparent 70%);
+  top:50%; left:50%;
+  transform:translate(-50%,-55%);
+  pointer-events:none;
+  animation:morph 12s ease-in-out infinite alternate;
+}
+.hero::after {
+  content:'';
+  position:absolute;
+  width:400px; height:400px;
+  border-radius:45% 55% 40% 60% / 55% 45% 60% 40%;
+  background:radial-gradient(ellipse, rgba(196,154,60,.10) 0%, transparent 70%);
+  bottom:5%; right:5%;
+  pointer-events:none;
+  animation:morph 15s ease-in-out infinite alternate-reverse;
+}
+@keyframes morph {
+  0%   { border-radius:60% 40% 55% 45% / 50% 60% 40% 50%; }
+  100% { border-radius:40% 60% 45% 55% / 60% 40% 50% 50%; }
+}
+
+/* rotating thin ring */
+.hero-ring {
+  position:absolute;
+  width:min(640px,85vw); height:min(640px,85vw);
+  border-radius:50%;
+  border:1px solid rgba(107,143,94,.2);
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  animation:spin 50s linear infinite;
+  pointer-events:none;
+}
+.hero-ring::after {
+  content:''; position:absolute;
+  width:9px; height:9px;
+  background:var(--dorado); border-radius:50%;
+  top:-4.5px; left:50%; transform:translateX(-50%);
+  box-shadow:0 0 12px rgba(196,154,60,.5);
+}
+@keyframes spin { to { transform:translate(-50%,-50%) rotate(360deg); } }
+
+.hero-inner { position:relative; z-index:1; max-width:800px; }
+
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:.55rem;
+  background:rgba(107,143,94,.1);
+  border:1px solid rgba(107,143,94,.3);
+  padding:.42rem 1.2rem; border-radius:100px;
+  font-size:.74rem; font-weight:500;
+  letter-spacing:.13em; text-transform:uppercase;
+  color:var(--sage-d);
+  margin-bottom:2rem;
+  animation:up .8s ease both;
+}
+.hdot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--sage);
+  animation:blink 2.2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(1.5)} }
+
+h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:clamp(2.8rem,8vw,6rem);
+  text-transform:uppercase;
+  line-height:.92; letter-spacing:-.01em;
+  color:var(--bosque);
+  animation:up .8s .12s ease both;
+}
+h1 .accent { color:var(--sage); display:block; }
+h1 .light {
+  font-style:italic; font-weight:300;
+  color:var(--texto-suave); font-size:.68em;
+  display:block; letter-spacing:.04em;
+}
+
+.hero-sub {
+  font-size:1.05rem; font-weight:300;
+  line-height:1.8; color:var(--texto-suave);
+  max-width:580px; margin:1.8rem auto 2.5rem;
+  animation:up .8s .24s ease both;
+}
+.hero-sub strong { color:var(--bosque); font-weight:500; }
+
+.hero-btns {
+  display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
+  animation:up .8s .35s ease both;
+}
+@keyframes up { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── BUTTONS ── */
+.btn {
+  display:inline-flex; align-items:center; gap:.5rem;
+  padding:.9rem 2rem; border-radius:5px;
+  font-family:'DM Sans',sans-serif;
+  font-size:.95rem; font-weight:500;
+  text-decoration:none; cursor:pointer; border:none;
+  transition:all .25s;
+}
+.btn-fill {
+  background:var(--sage);
+  color:#fff;
+  box-shadow:0 4px 18px rgba(107,143,94,.3);
+}
+.btn-fill:hover { background:var(--sage-d); transform:translateY(-2px); box-shadow:0 8px 28px rgba(107,143,94,.35); }
+.btn-ghost {
+  background:transparent; color:var(--bosque);
+  border:1.5px solid var(--border-m);
+}
+.btn-ghost:hover { border-color:var(--sage); color:var(--sage); background:var(--sage-ll); }
+.btn-full { width:100%; justify-content:center; }
+.btn-dorado {
+  background:var(--dorado); color:#fff;
+  box-shadow:0 4px 18px rgba(196,154,60,.28);
+}
+.btn-dorado:hover { background:#b08930; transform:translateY(-2px); }
+
+/* ── SECTIONS ── */
+section { padding:6rem 2rem; position:relative; }
+.inner { max-width:1100px; margin:0 auto; }
+
+.tag {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--sage); display:block; margin-bottom:.9rem;
+}
+h2 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  font-size:clamp(2.2rem,5vw,3.5rem);
+  text-transform:uppercase;
+  line-height:.95; letter-spacing:-.01em;
+  color:var(--bosque);
+}
+h2 .a { color:var(--sage); }
+h2 .d { color:var(--dorado); }
+
+/* ── ALTERNATING SECTION BG ── */
+.bg-crema-d { background:var(--crema-d); }
+.bg-white { background:#fff; }
+
+/* ── QUÉ ES PNL ── */
+.philo-grid {
+  display:grid; grid-template-columns:1fr 1.15fr;
+  gap:5rem; align-items:center;
+}
+.philo-text p {
+  font-size:.98rem; line-height:1.88;
+  font-weight:300; color:var(--texto-suave);
+  margin-top:1.2rem;
+}
+.philo-text p strong { color:var(--bosque); font-weight:500; }
+
+.quote-card {
+  background:#fff;
+  border:1px solid var(--border);
+  border-left:4px solid var(--sage);
+  border-radius:0 12px 12px 0;
+  padding:2rem 2rem 2rem 1.8rem;
+  position:relative; margin-bottom:1.5rem;
+  box-shadow:0 2px 20px rgba(46,61,47,.05);
+}
+.quote-card::before {
+  content:'\201C';
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:7rem; color:rgba(107,143,94,.12);
+  position:absolute; top:-.5rem; left:.8rem;
+  line-height:1; pointer-events:none;
+}
+.quote-card p {
+  font-size:1.05rem; font-style:italic;
+  font-weight:300; line-height:1.78;
+  color:var(--bosque-l); position:relative; z-index:1;
+}
+.quote-card cite {
+  display:block; margin-top:1rem;
+  font-size:.75rem; font-style:normal;
+  color:var(--texto-suave); letter-spacing:.1em; text-transform:uppercase;
+}
+
+.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:1rem; }
+.pillar {
+  background:var(--crema);
+  border:1px solid var(--border);
+  border-radius:12px; padding:1.4rem;
+  transition:border-color .3s, transform .3s, box-shadow .3s;
+}
+.pillar:hover {
+  border-color:var(--sage-l);
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(107,143,94,.12);
+}
+.pillar-icon { font-size:1.4rem; margin-bottom:.7rem; display:block; }
+.pillar h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:.95rem;
+  text-transform:uppercase; letter-spacing:.06em;
+  color:var(--bosque); margin-bottom:.45rem;
+}
+.pillar p { font-size:.8rem; color:var(--texto-suave); line-height:1.65; font-weight:300; }
+
+/* ── 7 PASOS ── */
+.pasos-intro { text-align:center; max-width:660px; margin:0 auto 5rem; }
+.pasos-intro p { margin-top:1.2rem; font-size:1rem; line-height:1.78; font-weight:300; color:var(--texto-suave); }
+
+.pasos-list {
+  display:flex; flex-direction:column;
+  max-width:920px; margin:0 auto;
+  position:relative;
+}
+.pasos-list::before {
+  content:''; position:absolute;
+  left:60px; top:0; bottom:0; width:1px;
+  background:linear-gradient(to bottom,
+    transparent,
+    var(--sage-l) 10%,
+    var(--sage-l) 90%,
+    transparent);
+}
+
+.paso {
+  display:grid; grid-template-columns:120px 1fr;
+  gap:2.5rem; padding:3rem 0;
+  border-bottom:1px solid var(--border);
+  position:relative; transition:background .3s;
+  border-radius:4px;
+}
+.paso:last-child { border-bottom:none; }
+.paso:hover { background:rgba(168,197,148,.08); }
+
+.paso-left { text-align:right; padding-right:1.5rem; position:relative; }
+.paso-left::after {
+  content:''; position:absolute;
+  right:-7px; top:1.8rem;
+  width:14px; height:14px; border-radius:50%;
+  background:var(--crema-d);
+  border:2px solid var(--sage-l);
+  transition:background .3s, border-color .3s;
+}
+.paso:hover .paso-left::after {
+  background:var(--sage);
+  border-color:var(--sage);
+}
+.paso-num {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:3rem;
+  color:rgba(107,143,94,.2); line-height:1; display:block;
+}
+.paso-icon { font-size:1.3rem; display:block; margin-top:.3rem; }
+
+.paso-title {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.65rem;
+  text-transform:uppercase; letter-spacing:.02em;
+  color:var(--bosque); line-height:1; margin-bottom:.3rem;
+}
+.paso-subtitle {
+  font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.16em; color:var(--sage);
+  font-weight:600; margin-bottom:.9rem; display:block;
+}
+.paso-desc {
+  font-size:.93rem; line-height:1.82;
+  font-weight:300; color:var(--texto-suave); max-width:560px;
+}
+.paso-desc strong { color:var(--bosque); font-weight:500; }
+
+.paso-tecnica {
+  display:inline-block; margin-top:1rem;
+  background:var(--dorado-ll);
+  border:1px solid rgba(196,154,60,.3);
+  color:#8a6820;
+  font-size:.7rem; font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:.32rem .9rem; border-radius:4px;
+}
+
+/* ── PRICING ── */
+.pricing-head { text-align:center; max-width:600px; margin:0 auto 3rem; }
+.pricing-head p { margin-top:1rem; font-size:.95rem; line-height:1.75; font-weight:300; color:var(--texto-suave); }
+
+.note-box {
+  background:var(--sage-ll);
+  border:1px solid rgba(107,143,94,.25);
+  border-radius:10px; padding:1rem 1.5rem;
+  font-size:.85rem; color:var(--sage-d);
+  font-weight:300; line-height:1.72;
+  text-align:center; max-width:640px; margin:0 auto 3rem;
+}
+.note-box strong { color:var(--bosque); font-weight:500; }
+
+.cards { display:grid; grid-template-columns:1fr 1fr; gap:2rem; max-width:870px; margin:0 auto; }
+
+.card {
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:#fff;
+  padding:2.5rem;
+  position:relative;
+  transition:transform .3s, box-shadow .3s, border-color .3s;
+  box-shadow:0 2px 16px rgba(46,61,47,.05);
+}
+.card:hover {
+  transform:translateY(-6px);
+  box-shadow:0 12px 40px rgba(107,143,94,.15);
+  border-color:var(--sage-l);
+}
+.card.star {
+  background:var(--bosque);
+  border-color:var(--bosque);
+}
+.card.star:hover {
+  box-shadow:0 12px 40px rgba(46,61,47,.25);
+}
+
+.card-badge {
+  position:absolute; top:-14px; left:50%;
+  transform:translateX(-50%);
+  background:var(--dorado); color:#fff;
+  font-size:.68rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  padding:.38rem 1.2rem; border-radius:100px;
+  white-space:nowrap;
+  box-shadow:0 3px 12px rgba(196,154,60,.35);
+}
+
+.card-plan {
+  font-size:.72rem; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--texto-suave); margin-bottom:1.2rem;
+}
+.card.star .card-plan { color:rgba(255,255,255,.5); }
+
+.card-price {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:4.5rem;
+  line-height:1; color:var(--bosque);
+}
+.card.star .card-price { color:#fff; }
+.card-price sup { font-size:2rem; vertical-align:top; margin-top:.6rem; }
+
+.card-per {
+  font-size:.82rem; color:var(--texto-suave);
+  font-weight:300; margin-bottom:1.5rem;
+}
+.card.star .card-per { color:rgba(255,255,255,.55); }
+
+.card-saving {
+  display:inline-block;
+  background:var(--dorado-ll);
+  border:1px solid rgba(196,154,60,.3);
+  color:#8a6820;
+  font-size:.73rem; font-weight:600;
+  padding:.3rem .9rem; border-radius:4px;
+  margin-bottom:1.5rem;
+}
+
+.features { list-style:none; margin-bottom:2rem; }
+.features li {
+  padding:.5rem 0;
+  border-bottom:1px solid var(--border);
+  font-size:.88rem; color:var(--texto-suave);
+  font-weight:300;
+  display:flex; align-items:flex-start;
+  gap:.7rem; line-height:1.55;
+}
+.card.star .features li { color:rgba(255,255,255,.7); border-color:rgba(255,255,255,.08); }
+.features li::before { content:'✓'; color:var(--sage); font-weight:700; flex-shrink:0; }
+.card.star .features li::before { color:var(--sage-l); }
+
+/* ── CTA ── */
+.cta-section {
+  background:var(--bosque);
+  text-align:center;
+}
+.cta-section h2 { color:#fff; margin-bottom:1rem; }
+.cta-section h2 .a { color:var(--sage-l); }
+.cta-section p {
+  font-size:1rem; font-weight:300;
+  color:rgba(255,255,255,.65);
+  max-width:500px; margin:0 auto 2.5rem;
+  line-height:1.78;
+}
+
+.ornament { display:flex; align-items:center; justify-content:center; gap:.8rem; padding:.8rem 0 1.5rem; }
+.ornament-line { height:1px; width:80px; background:linear-gradient(90deg,transparent,rgba(168,197,148,.4),transparent); }
+.ornament-glyph { font-size:.75rem; color:var(--sage-l); letter-spacing:.25em; }
+
+/* ── MODAL ── */
+.overlay {
+  display:none; position:fixed; inset:0;
+  background:rgba(20,35,20,.75);
+  backdrop-filter:blur(12px);
+  z-index:9999;
+  align-items:center; justify-content:center; padding:1.5rem;
+}
+.overlay.on { display:flex; }
+
+.modal {
+  background:var(--crema);
+  border:1px solid var(--border-m);
+  border-radius:18px; width:100%; max-width:760px;
+  max-height:90vh; display:flex; flex-direction:column;
+  overflow:hidden;
+  animation:pop .35s cubic-bezier(.16,1,.3,1) both;
+  box-shadow:0 30px 80px rgba(20,35,20,.2);
+}
+@keyframes pop { from{opacity:0;transform:scale(.94) translateY(20px)} to{opacity:1;transform:none} }
+
+.modal-head {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1.8rem 2.2rem 1.4rem;
+  border-bottom:1px solid var(--border);
+  background:#fff;
+  flex-shrink:0;
+}
+.modal-head h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.4rem;
+  text-transform:uppercase; letter-spacing:.05em;
+  color:var(--bosque);
+}
+.modal-x {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--crema-d); border:none;
+  color:var(--texto); font-size:1rem; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .2s;
+}
+.modal-x:hover { background:var(--sage-ll); color:var(--sage-d); }
+
+.modal-body { padding:2rem 2.2rem; overflow-y:auto; flex:1; }
+
+.ct { font-size:.86rem; line-height:1.82; color:var(--texto-suave); font-weight:300; }
+.ct strong { color:var(--bosque); font-weight:500; }
+
+.ct-head {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700; font-size:.88rem;
+  text-transform:uppercase; letter-spacing:.12em;
+  color:var(--sage-d);
+  margin:1.8rem 0 .6rem;
+  padding-bottom:.4rem;
+  border-bottom:1.5px solid var(--sage-ll);
+}
+.ct-head:first-child { margin-top:0; }
+
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0; }
+.fg { display:flex; flex-direction:column; gap:.4rem; }
+.fg.full { grid-column:1/-1; }
+.fg label {
+  font-size:.72rem; text-transform:uppercase;
+  letter-spacing:.1em; color:var(--texto-suave); font-weight:500;
+}
+.fg input, .fg select {
+  background:#fff;
+  border:1.5px solid var(--border-m);
+  border-radius:7px; padding:.7rem 1rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:.9rem; color:var(--bosque);
+  outline:none; width:100%; transition:border-color .2s;
+}
+.fg input::placeholder { color:var(--crema-dd); }
+.fg input:focus, .fg select:focus { border-color:var(--sage); }
+.fg select option { background:var(--crema); }
+
+.check-row {
+  display:flex; gap:.9rem; align-items:flex-start;
+  background:var(--sage-ll);
+  border:1px solid rgba(107,143,94,.2);
+  border-radius:10px; padding:1rem 1.3rem; margin:1.5rem 0;
+}
+.check-row input[type=checkbox] {
+  width:18px; height:18px; accent-color:var(--sage);
+  flex-shrink:0; margin-top:.15rem; cursor:pointer;
+}
+.check-row label { font-size:.84rem; color:var(--bosque-l); line-height:1.65; cursor:pointer; }
+
+.modal-foot {
+  display:flex; gap:1rem; justify-content:flex-end;
+  padding:1.4rem 2.2rem;
+  border-top:1px solid var(--border);
+  background:#fff; flex-shrink:0;
+}
+
+.success { display:none; text-align:center; padding:3.5rem 2rem; }
+.success.on { display:block; }
+.success-big { font-size:3.5rem; display:block; margin-bottom:1rem; }
+.success h3 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:2rem;
+  text-transform:uppercase; color:var(--bosque); margin-bottom:.8rem;
+}
+.success p { font-size:.9rem; color:var(--texto-suave); line-height:1.7; max-width:400px; margin:0 auto; font-weight:300; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--bosque);
+  padding:2.5rem 3rem;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.foot-brand {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800; font-size:1.05rem;
+  text-transform:uppercase; letter-spacing:.07em; color:#fff;
+}
+.foot-brand em { font-style:normal; color:var(--sage-l); }
+.foot-copy { font-size:.78rem; color:rgba(255,255,255,.4); font-weight:300; }
+
+/* ── REVEAL ── */
+.rv { opacity:0; transform:translateY(20px); transition:opacity .7s ease, transform .7s ease; }
+.rv.in { opacity:1; transform:none; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav { padding:1rem 1.2rem; }
+  .philo-grid { grid-template-columns:1fr; gap:3rem; }
+  .pillars { grid-template-columns:1fr 1fr; }
+  .pasos-list::before { left:30px; }
+  .paso { grid-template-columns:70px 1fr; gap:1.5rem; }
+  .paso-left { padding-right:1rem; }
+  .paso-num { font-size:2rem; }
+  .cards { grid-template-columns:1fr; }
+  .form-grid { grid-template-columns:1fr; }
+  .modal-body, .modal-head, .modal-foot { padding:1.2rem; }
+  footer { flex-direction:column; gap:1rem; text-align:center; }
+}
+@media(max-width:500px){
+  .pillars { grid-template-columns:1fr; }
+  .hero-btns { flex-direction:column; }
+  .btn { width:100%; justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Mentes <em>Abundantes</em></div>
+  <a href="#precios" class="nav-pill">Comenzar mi proceso →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ring"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="hdot"></span>Coaching en PNL · Sesiones 1:1</div>
+    <h1>
+      <span class="light">Reprograma tu mente con</span>
+      <span class="accent">PNL</span>
+      <span class="light">y vive en abundancia</span>
+    </h1>
+    <p class="hero-sub">
+      La Programación Neurolingüística te da las herramientas para
+      <strong>reescribir los programas mentales</strong> que te frenan.
+      En 7 sesiones trabajamos juntas para liberar creencias limitantes,
+      activar tu estado de excelencia y diseñar la vida que mereces.
+    </p>
+    <div class="hero-btns">
+      <a href="#pasos" class="btn btn-fill">Ver los 7 Pasos →</a>
+      <a href="#precios" class="btn btn-ghost">Ver inversión</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES PNL -->
+<section class="bg-white">
+  <div class="inner philo-grid">
+    <div class="philo-text rv">
+      <span class="tag">Programación Neurolingüística</span>
+      <h2>¿Qué es la <span class="a">PNL</span> y cómo te transforma?</h2>
+      <p>La PNL estudia cómo tu mente procesa la realidad a través de tus <strong>programas internos</strong> — las creencias, patrones de pensamiento y filtros que determinan cómo percibes el mundo y cómo actúas en él. Si el programa limita tus resultados, podemos reprogramarlo.</p>
+      <p>En coaching PNL no analizamos el pasado eternamente — lo usamos como información para <strong>reprogramar el presente</strong>. Con técnicas probadas activamos recursos que ya tienes dentro, creamos nuevas anclas emocionales y transformamos los patrones que te mantienen pequeña.</p>
+      <p>Como <strong>coach certificada en PNL</strong>, acompaño tu proceso con herramientas concretas, preguntas poderosas y técnicas diseñadas para generar cambios reales y medibles.</p>
+    </div>
+    <div class="rv">
+      <div class="quote-card">
+        <p>El mapa no es el territorio. Cada persona construye su propia versión de la realidad — y esa versión puede ser reprogramada.</p>
+        <cite>— Principio fundamental de la PNL · Bandler & Grinder</cite>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-icon">🧠</span>
+          <h3>Neuro</h3>
+          <p>Cómo tu sistema nervioso procesa la información y crea tus experiencias internas.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🗣️</span>
+          <h3>Lingüístico</h3>
+          <p>El lenguaje que usas — contigo y con otros — moldea tu realidad y tus resultados.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">⚙️</span>
+          <h3>Programación</h3>
+          <p>Los patrones repetibles de pensamiento y conducta que puedes identificar y cambiar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 PASOS -->
+<section class="bg-crema-d" id="pasos">
+  <div class="inner">
+    <div class="pasos-intro rv">
+      <span class="tag">El Proceso</span>
+      <h2>Los <span class="a">7 Pasos</span> hacia tu <span class="d">Autoliberación</span></h2>
+      <p>Un proceso progresivo que combina las técnicas más poderosas de la PNL con coaching personal profundo. Cada sesión es un paso — juntos forman la ruta completa hacia tu versión más libre, segura y abundante.</p>
+    </div>
+    <div class="pasos-list">
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">01</span><span class="paso-icon">🗺️</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Diagnóstico · Tu Punto de Partida</span>
+          <div class="paso-title">Descubre tu Mapa Mental</div>
+          <p class="paso-desc">La PNL enseña que <strong>el mapa no es el territorio</strong>. Esta sesión es el descubrimiento de tu mapa: las representaciones internas, filtros de percepción y sistemas de creencias que construyen tu realidad actual. Identificamos tu sistema representacional dominante (visual, auditivo, kinestésico) y los patrones que guían tus decisiones sin que lo sepas.</p>
+          <span class="paso-tecnica">🔍 Sistemas Representacionales · Metamodelo · Calibración</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">02</span><span class="paso-icon">🔓</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Liberación · Rompe el Techo Invisible</span>
+          <div class="paso-title">Transforma tus Creencias Limitantes</div>
+          <p class="paso-desc">Las creencias no son verdades — son <strong>programas instalados</strong> que tu mente repite como si fueran hechos. "No soy suficiente", "el dinero es difícil", "no merezco más" — identificamos cuáles te frenan y usamos técnicas de PNL para transformarlas en creencias potenciadoras que abran posibilidades que hoy no puedes ver.</p>
+          <span class="paso-tecnica">⚡ Cambio de Creencias · Reencuadre · Submodalidades</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">03</span><span class="paso-icon">💬</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Lenguaje · Las Palabras que te Crean</span>
+          <div class="paso-title">Reprograma tu Diálogo Interno</div>
+          <p class="paso-desc">Tu voz interior habla contigo todo el día. ¿Qué te dice? La PNL trabaja el <strong>diálogo interno</strong> como uno de los mecanismos más poderosos de autoprogramación. Usamos el Metamodelo del Lenguaje para detectar distorsiones, generalizaciones y eliminaciones en tu discurso y los transformamos en un lenguaje que construye en lugar de destruir.</p>
+          <span class="paso-tecnica">🗣️ Metamodelo · Diálogo Interno · Afirmaciones PNL</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">04</span><span class="paso-icon">⚓</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Recursos · Tu Poder a Demanda</span>
+          <div class="paso-title">Ancla tu Estado de Excelencia</div>
+          <p class="paso-desc">El <strong>anclaje</strong> es una de las técnicas más poderosas de la PNL: crear un disparador neurológico que te lleve instantáneamente a tu mejor estado emocional. Trabajamos confianza, claridad y determinación para que puedas acceder a ellos cuando más los necesites — antes de una venta, una presentación o una decisión importante.</p>
+          <span class="paso-tecnica">⚓ Anclaje · Círculo de Excelencia · Stacking de Anclas</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">05</span><span class="paso-icon">⏳</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Historia · Reescribe tu Pasado</span>
+          <div class="paso-title">Libérate con la Línea del Tiempo</div>
+          <p class="paso-desc">La <strong>Línea del Tiempo</strong> trabaja directamente con cómo tu mente almacena experiencias pasadas y expectativas futuras. Visitamos los momentos que dejaron programas limitantes — sin revivir el dolor — y los resignificamos para liberar la carga emocional que cargas. Tu pasado no cambia, pero sí lo que significa para ti hoy.</p>
+          <span class="paso-tecnica">⏳ Línea del Tiempo · Resignificación · Integración de Partes</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">06</span><span class="paso-icon">🎯</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Diseño · Programa tu Destino</span>
+          <div class="paso-title">Estrategia Mental para tus Metas</div>
+          <p class="paso-desc">La PNL tiene una metodología específica para el establecimiento de metas que va mucho más allá de escribirlas en papel. Usamos el <strong>modelo de Objetivos Bien Formados</strong> para codificar tu visión directamente en tu sistema neurológico — para que tu mente empiece a navegar hacia ella de forma automática e inconsciente.</p>
+          <span class="paso-tecnica">🎯 Objetivos Bien Formados · Modelado · Estrategias de Éxito</span>
+        </div>
+      </div>
+
+      <div class="paso rv">
+        <div class="paso-left"><span class="paso-num">07</span><span class="paso-icon">🦋</span></div>
+        <div class="paso-right">
+          <span class="paso-subtitle">Integración · Tu Nueva Identidad</span>
+          <div class="paso-title">El Ser Abundante Reprogramado</div>
+          <p class="paso-desc">El último paso integra todo el proceso: anclamos tu nueva identidad — la mujer que superó las creencias limitantes, que habla con confianza, que sabe que merece todo lo que desea. Trabajamos el <strong>nivel de identidad de la PNL</strong>, el más profundo de todos, para que el cambio sea duradero. No es lo que haces: es quien eres.</p>
+          <span class="paso-tecnica">✨ Niveles Neurológicos · Nueva Historia de Vida · Futuro Deseado</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="bg-white" id="precios">
+  <div class="inner">
+    <div class="pricing-head rv">
+      <span class="tag">Tu Inversión</span>
+      <h2>Elige tu <span class="a">nivel de compromiso</span></h2>
+      <p>Puedes comenzar con una sesión individual, o comprometerte con el proceso completo de 7 pasos — diseñado para una transformación real y duradera.</p>
+    </div>
+    <div class="note-box rv">
+      🌿 <strong>El Paquete Transformación (7 sesiones)</strong> recorre cada uno de los 7 pasos del proceso en orden, una sesión por paso. Es la forma más completa y efectiva de vivir la reprogramación con PNL.
+    </div>
+    <div class="cards">
+
+      <!-- INDIVIDUAL -->
+      <div class="card rv">
+        <div class="card-plan">Sesión Individual</div>
+        <div class="card-price"><sup>$</sup>50</div>
+        <div class="card-per">por sesión de 60 minutos</div>
+        <ul class="features">
+          <li>1 sesión de coaching PNL 1:1 (60 min)</li>
+          <li>Sesión por Zoom con grabación</li>
+          <li>Técnicas de PNL aplicadas a tu caso</li>
+          <li>Resumen con compromisos y ejercicios</li>
+          <li>Contrato de coaching firmado</li>
+          <li>Soporte por WhatsApp 48h post-sesión</li>
+        </ul>
+        <a href="https://www.mentes-abundantes.com/coachingpago" class="btn btn-fill btn-full">Contratar sesión →</a>
+      </div>
+
+      <!-- PAQUETE -->
+      <div class="card star rv">
+        <div class="card-badge">⭐ Los 7 Pasos · Ahorra $50</div>
+        <div class="card-plan">Paquete Transformación</div>
+        <div class="card-price"><sup>$</sup>300</div>
+        <div class="card-per">7 sesiones · $42.85 por sesión</div>
+        <div class="card-saving">🌿 Proceso completo de autoliberación · Ahorras $50</div>
+        <ul class="features">
+          <li>7 sesiones PNL 1:1 — un paso por sesión</li>
+          <li>Sesiones por Zoom con grabación incluida</li>
+          <li>Técnicas de PNL progresivas e integradas</li>
+          <li>Resumen + ejercicios de práctica por sesión</li>
+          <li>Contrato de coaching firmado</li>
+          <li>Soporte por WhatsApp entre sesiones</li>
+          <li>Recursos exclusivos de Mentes Abundantes</li>
+          <li>Seguimiento y revisión de anclas y ejercicios</li>
+        </ul>
+        <a href="https://www.mentes-abundantes.com/coachingpago" class="btn btn-dorado btn-full">Iniciar los 7 Pasos →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="inner rv" style="text-align:center;">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-glyph">✦ ✦ ✦</div>
+      <div class="ornament-line"></div>
+    </div>
+    <span class="tag" style="color:var(--sage-l);">¿Lista para reprogramarte?</span>
+    <h2>Tu nueva versión <span class="a">ya existe dentro de ti</span></h2>
+    <p>Solo necesita las herramientas correctas para salir. La PNL te da el mapa. El proceso te da el camino. Tú pones la decisión.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="https://www.mentes-abundantes.com/coachingpago" class="btn btn-dorado">Iniciar los 7 Pasos — $300 →</a>
+      <a href="https://www.mentes-abundantes.com/coachingpago" class="btn" style="background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.2);">Sesión Individual — $50</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">Mentes <em>Abundantes</em></div>
+  <div class="foot-copy">© 2025 Mentes Abundantes · Mercadeo MRR LLC · Todos los derechos reservados</div>
+</footer>
+
+<!-- MODAL CONTRATO -->
+<div class="overlay" id="overlay" onclick="closeOut(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modal-title">Contrato de Coaching PNL</h3>
+      <button class="modal-x" onclick="closeModal()">✕</button>
+    </div>
+
+    <div class="modal-body" id="form-body">
+      <p class="ct">Este contrato formaliza el acuerdo de servicio entre <strong>Krystina Zambrano Bottini · Mentes Abundantes</strong> (en adelante "La Coach"), coach certificada en Programación Neurolingüística, y el/la cliente indicado/a a continuación.</p>
+
+      <div class="ct-head">Datos del Cliente</div>
+      <div class="form-grid">
+        <div class="fg"><label>Nombre completo *</label><input id="c-name" placeholder="Tu nombre completo"></div>
+        <div class="fg"><label>Correo electrónico *</label><input id="c-email" type="email" placeholder="tu@email.com"></div>
+        <div class="fg"><label>WhatsApp / Teléfono</label><input id="c-phone" placeholder="+1 000 000 0000"></div>
+        <div class="fg"><label>País de residencia</label><input id="c-country" placeholder="País"></div>
+        <div class="fg full"><label>Plan contratado *</label>
+          <select id="c-plan">
+            <option value="individual">Sesión Individual de Coaching PNL — $50 USD</option>
+            <option value="paquete">Paquete Transformación · 7 Pasos PNL — $300 USD</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ct-head">1. Naturaleza del Servicio de Coaching PNL</div>
+      <p class="ct">El Coaching en Programación Neurolingüística (PNL) es un proceso de desarrollo personal que utiliza técnicas de la PNL para facilitar cambios en patrones de pensamiento, creencias y conductas. La Coach actúa como facilitadora — no como terapeuta ni consejera. Este proceso <strong>no sustituye</strong> tratamiento psicológico, médico, legal ni financiero. El cliente asume plena responsabilidad de sus decisiones y resultados.</p>
+
+      <div class="ct-head">2. Estructura del Proceso y Honorarios</div>
+      <p class="ct">
+        <strong>Sesión Individual:</strong> $50 USD por sesión de 60 minutos.<br>
+        <strong>Paquete Transformación (7 Pasos PNL):</strong> $300 USD · 7 sesiones de 60 minutos · pago adelantado.<br><br>
+        El Paquete Transformación sigue los 7 Pasos para la Autoliberación en orden progresivo. Las sesiones deben completarse en un máximo de <strong>5 meses</strong> desde la primera sesión. El pago se realiza previo a cada sesión (plan individual) o al inicio del proceso (paquete).
+      </p>
+
+      <div class="ct-head">3. Política de Cancelación y Reprogramación</div>
+      <p class="ct">
+        • Reprogramaciones con mínimo <strong>24 horas de anticipación</strong> se aceptan sin costo.<br>
+        • Cancelaciones con menos de 24 horas cuentan como sesión realizada.<br>
+        • El Paquete Transformación no tiene reembolso una vez iniciado el proceso.<br>
+        • Las sesiones no utilizadas dentro del plazo de 5 meses no son reembolsables ni transferibles.<br>
+        • Si La Coach cancela por fuerza mayor, la sesión se reprograma sin descuento del paquete.
+      </p>
+
+      <div class="ct-head">4. Confidencialidad y Grabación</div>
+      <p class="ct">La Coach mantiene confidencialidad total sobre el contenido de las sesiones. Las sesiones se graban exclusivamente para uso personal del cliente. Ningún contenido será compartido con terceros sin autorización escrita. La grabación es de uso personal y no puede ser publicada, compartida ni distribuida.</p>
+
+      <div class="ct-head">5. Responsabilidad del Cliente y Resultados</div>
+      <p class="ct">El coaching PNL es un proceso activo que requiere participación y compromiso dentro y fuera de las sesiones. Los resultados dependen directamente del nivel de involucramiento, honestidad y práctica de los ejercicios asignados. La Coach no garantiza resultados específicos. La transformación es posible — y depende de ambas partes.</p>
+
+      <div class="ct-head">6. Propiedad Intelectual</div>
+      <p class="ct">Los materiales, técnicas adaptadas, ejercicios y recursos compartidos en el proceso son propiedad intelectual de Mentes Abundantes / Krystina Zambrano Bottini. No pueden ser reproducidos, enseñados ni comercializados sin autorización escrita previa.</p>
+
+      <div class="ct-head">7. Comunicación entre Sesiones</div>
+      <p class="ct">La Coach está disponible por WhatsApp para preguntas breves vinculadas al proceso durante <strong>48 horas post-sesión</strong> (plan individual) o de forma continua <strong>entre sesiones</strong> (paquete). Las consultas extensas o nuevos temas requieren una sesión adicional.</p>
+
+      <div class="check-row">
+        <input type="checkbox" id="c-terms">
+        <label for="c-terms">He leído y comprendo todos los términos de este Contrato de Coaching PNL. Acepto voluntariamente las condiciones, entiendo la naturaleza del proceso de Programación Neurolingüística y me comprometo a participar activamente. Al confirmar, firmo este contrato de forma digital.</label>
+      </div>
+    </div>
+
+    <div class="modal-body success" id="success-body">
+      <span class="success-big">🌿✨</span>
+      <h3>¡Tu reprogramación comienza!</h3>
+      <p>Tu contrato ha sido registrado. En breve nos contactaremos para agendar tu primera sesión. <strong>Bienvenida a tu proceso de autoliberación con PNL.</strong></p>
+    </div>
+
+    <div class="modal-foot" id="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancelar</button>
+      <button class="btn btn-fill" onclick="submitForm()">Firmar y comenzar →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(plan){
+  document.getElementById('overlay').classList.add('on');
+  document.getElementById('form-body').style.display='block';
+  document.getElementById('success-body').classList.remove('on');
+  document.getElementById('modal-foot').style.display='flex';
+  document.getElementById('modal-title').textContent =
+    plan==='paquete'?'Contrato — Paquete 7 Pasos PNL ($300)':'Contrato — Sesión Individual PNL ($50)';
+  document.getElementById('c-plan').value=plan;
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('overlay').classList.remove('on');
+  document.body.style.overflow='';
+  ['c-name','c-email','c-phone','c-country'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('c-terms').checked=false;
+  document.getElementById('form-body').style.display='block';
+  document.getElementById('success-body').classList.remove('on');
+  document.getElementById('modal-foot').style.display='flex';
+}
+function closeOut(e){ if(e.target===document.getElementById('overlay')) closeModal(); }
+function submitForm(){
+  const name=document.getElementById('c-name').value.trim();
+  const email=document.getElementById('c-email').value.trim();
+  const terms=document.getElementById('c-terms').checked;
+  if(!name||!email){alert('Por favor completa tu nombre y correo electrónico.');return;}
+  if(!terms){alert('Debes aceptar los términos del contrato para continuar.');return;}
+  document.getElementById('form-body').style.display='none';
+  document.getElementById('success-body').classList.add('on');
+  document.getElementById('modal-foot').style.display='none';
+  document.getElementById('modal-title').textContent='¡Bienvenida!';
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((en,i)=>{
+    if(en.isIntersecting){
+      setTimeout(()=>en.target.classList.add('in'),i*70);
+      obs.unobserve(en.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
